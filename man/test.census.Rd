@@ -1,21 +1,15 @@
+\docType{data}
 \name{test.census}
 \alias{test.census}
-\docType{data}
 \title{Census data for hypothetical plant}
+\format{A data frame with 41 census observations on the following variables
+\describe{ \item{list("plant")}{Plant id number} \item{list("year")}{Year of
+census} \item{list("stage")}{Stage class: seedling, vegetative, or
+reproductive} \item{list("fruits")}{Total number of fruits} }}
 \description{
-   Three years of census data for a hypothetical plant with three stage classes.
+  Three years of census data for a hypothetical plant with
+  three stage classes.
 }
-\usage{data(test.census)}
-\format{
-  A data frame with 41 census observations on the following variables
-    \describe{
-    \item{\code{plant}}{Plant id number}
-    \item{\code{year}}{Year of census}
-    \item{\code{stage}}{Stage class: seedling, vegetative, or reproductive}
-    \item{\code{fruits}}{Total number of fruits}
-  }
-  }
-
 \examples{
 data(test.census)
 stages <- c("seedling", "vegetative", "reproductive")
@@ -27,15 +21,15 @@ stage.vector.plot(sv)
 
 ## set xaxt='n' to avoid fractions of a year (2002.5)
 stage.vector.plot(sv, prop=FALSE, xaxt="n", las=1)
- axis(1, 2001:2003, c(2001, 2002, 2003))
+axis(1, 2001:2003, c(2001, 2002, 2003))
 
 
 ## Convert census data to state-fate transition table using reshape
 reshape(test.census, direction="wide", idvar="plant", timevar="year")
 
 ## Convert census data  to state-fate transition table using merge
-trans <- subset(merge(test.census, test.census, by="plant", sort=FALSE), 
-               year.x==year.y-1)
+trans <- subset(merge(test.census, test.census, by="plant", sort=FALSE),
+              year.x==year.y-1)
 trans
 
 ## Format column and row names
@@ -50,8 +44,8 @@ trans$fate  <- ordered(trans$fate,  levels = c(stages,"dead"))
 trans01 <- subset(trans, year==2001)
 seedlings<-nrow(subset(test.census, year==2002 & stage=="seedling"))
 
-## Add individual fertilities using "anonymous reproduction"  based on the 
-## proportional reproductive outputs of flowering plants and the total number 
+## Add individual fertilities using "anonymous reproduction"  based on the
+## proportional reproductive outputs of flowering plants and the total number
 ## of seedlings at the end of the projection interval
 trans01$seedling<-trans01$fruits/sum(trans01$fruits) * seedlings
 trans01
@@ -74,7 +68,8 @@ F.mat
 ## The final projection matrix is just
 T.mat+F.mat
 
-## OR use projection matrix function - 
+## OR use projection matrix function -
 projection.matrix(trans01)
 }
 \keyword{datasets}
+

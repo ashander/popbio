@@ -1,3 +1,36 @@
+#'Calculate log stochastic growth rate
+#'
+#'Calculates the log stochastic growth rate by Tuljapukar's approximation and
+#'by simulation.
+#'
+#'
+#'@param matrices a \code{\link{list}} with two or more projection matrices, or
+#'a matrix with one projection matrix per column, with elements filled by
+#'columns
+#'@param prob a vector of probability weights used by \code{\link{sample}} for
+#'selecting the projection matrices, defaults to equal probabilities
+#'@param maxt number of time intervals, default 50000
+#'@param verbose Print comment at start of time 1, 10000, 20000, etc.
+#'@return A list with 3 items \item{ approx }{ log stochastic growth rate by
+#'Tuljapukar's approximation } \item{sim }{ log stochastic growth rate by
+#'simulation } \item{ sim.CI}{ confindence interval for simulation}
+#'@author Chris Stubben
+#'@seealso \code{\link{stoch.projection}} to output population sizes from
+#'simulation
+#'@references Morris, W. F., and D. F. Doak. 2002. Quantitative conservation
+#'biology: Theory and practice of population viability analysis. Sinauer,
+#'Sunderland, Massachusetts, USA.
+#'@source converted Matlab code from Box 7.4 in Morris and Doak (2002)
+#'@keywords survey
+#'@examples
+#'
+#'data(hudsonia)
+#'sgr<-stoch.growth.rate(hudsonia)
+#'sgr
+#'
+#'exp(sgr$approx)
+#'
+#'
 stoch.growth.rate<-function(matrices, prob=NULL, maxt=50000, verbose=TRUE)
 {
    if(is.list(matrices)){matrices<-matrix(unlist(matrices), ncol=length(matrices))}

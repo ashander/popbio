@@ -1,36 +1,33 @@
 \name{extCDF}
 \alias{extCDF}
-\title{ Count-based extinction time cumulative distribution function }
-\description{
-  Returns the extinction time cumulative distribution function using
-  parameters derived from population counts.
+\title{Count-based extinction time cumulative distribution function}
+\source{
+  converted Matlab code from Box 3.3 and equation 3.5 in
+  Morris and Doak (2002)
 }
 \usage{
-extCDF(mu, sig2, Nc, Ne, tmax = 50)
+  extCDF(mu, sig2, Nc, Ne, tmax = 50)
 }
 \arguments{
-  \item{mu}{ estimated value of mean mu }
-  \item{sig2}{ estimated value of sample variance }
-  \item{Nc}{ current population size }
-  \item{Ne}{ quasi-extinction threshold }
-  \item{tmax}{ latest time to calculate extinction probability, default
-    50 }
+  \item{mu}{estimated value of mean mu}
+
+  \item{sig2}{estimated value of sample variance}
+
+  \item{Nc}{current population size}
+
+  \item{Ne}{quasi-extinction threshold}
+
+  \item{tmax}{latest time to calculate extinction
+  probability, default 50}
 }
-%\details{}
 \value{
- A vector with the cumulative probabilities of quasi-extinction from
- t=0 to t=tmax.
+  A vector with the cumulative probabilities of
+  quasi-extinction from t=0 to t=tmax.
 }
-
-\source{converted Matlab code from  Box 3.3 and equation 3.5 in Morris and Doak
-  (2002) }
-
-\references{ Morris, W. F., and D. F. Doak. 2002. Quantitative conservation
-biology: Theory and practice of population viability analysis.
-Sinauer, Sunderland, Massachusetts, USA. }
-\author{ Chris Stubben }
-%\note{ }
-\seealso{ \code{\link{countCDFxt}} for bootstrap confidence intervals}
+\description{
+  Returns the extinction time cumulative distribution
+  function using parameters derived from population counts.
+}
 \examples{
 data(grizzly)
 logN<-log(grizzly$N[-1]/grizzly$N[-39])
@@ -49,11 +46,25 @@ n<-seq(20, 100, 2)
 exts<-numeric(length(n))
 for (i in 1:length(n) )
 {
-   ex<-extCDF(mu, sig2, Nc=n[i], Ne=20)
-   exts[i]<-ex[50]
+  ex<-extCDF(mu, sig2, Nc=n[i], Ne=20)
+  exts[i]<-ex[50]
 }
 plot(n, exts, type='l', las=1,
 xlab="Current population size",
 ylab="Probability of quasi-extinction by year 50")
 }
-\keyword{ survey }
+\author{
+  Chris Stubben
+}
+\references{
+  Morris, W. F., and D. F. Doak. 2002. Quantitative
+  conservation biology: Theory and practice of population
+  viability analysis. Sinauer, Sunderland, Massachusetts,
+  USA.
+}
+\seealso{
+  \code{\link{countCDFxt}} for bootstrap confidence
+  intervals
+}
+\keyword{survey}
+

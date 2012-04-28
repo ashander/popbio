@@ -1,42 +1,35 @@
+\docType{data}
 \name{aq.trans}
 \alias{aq.trans}
-
-\docType{data}
-\title{ Annual transition data for Aquilegia in the southwestern US}
-\description{
-  Transition data listing stages and fates from \emph{Aquilegia chrysantha}  in Fillmore Canyon,
-  Organ Mountains, New Mexico, 1996-2003.
+\title{Annual transition data for Aquilegia in the southwestern US}
+\format{A data frame with 1637 observations on the following 9 variables.
+\describe{ \item{list("plot")}{Plot number} \item{list("year")}{Staring year
+of census} \item{list("plant")}{Plant id number} \item{list("stage")}{Initial
+stage class with ordered factor levels \code{seed} < \code{recruit} <
+\code{small} < \code{large} < \code{flower}.  } \item{list("leaf")}{Total
+number of leaves} \item{list("rose")}{Total number of rosettes}
+\item{list("fruits")}{Total number of mature fruits}
+\item{list("fate")}{Final stage class or fate with levels \code{seed} <
+\code{recruit} < \code{small} < \code{large} < \code{flower} < \code{dead}}
+\item{list("rose2")}{Final number of rosettes} }}
+\source{
+  Data set owners: Brook Milligan, Chris Stubben, Allan
+  Strand
 }
-\usage{data(aq.trans)}
-\format{
-  A data frame with 1637 observations on the following 9 variables.
-  \describe{
-    \item{\code{plot}}{Plot number}
-    \item{\code{year}}{Staring year of census}
-    \item{\code{plant}}{Plant id number}
-     \item{\code{stage}}{Initial stage class with ordered factor
-     levels \code{seed} < \code{recruit} < \code{small} < \code{large}
-     < \code{flower}.   }
-    \item{\code{leaf}}{Total number of leaves}
-   \item{\code{rose}}{Total number of rosettes}
-    \item{\code{fruits}}{Total number of mature fruits}
-    \item{\code{fate}}{Final stage class or fate with levels
-    \code{seed} < \code{recruit} < \code{small} < \code{large} <
-    \code{flower} < \code{dead}}
-    \item{\code{rose2}}{Final number of rosettes}
-  }
+\description{
+  Transition data listing stages and fates from
+  \emph{Aquilegia chrysantha} in Fillmore Canyon, Organ
+  Mountains, New Mexico, 1996-2003.
 }
 \details{
-    The five stage classes include seeds in the seed bank, new recruits or
-     seedlings, small vegetative plants with 1 rosette, large
-     vegetative plants with 2 or more rosettes, and flowering plants.
-     Stage classes were assigned to census plants
-    using a combination of status and size data recorded in the
-    field.  See \code{demo(stage.classify)} for more details.
+  The five stage classes include seeds in the seed bank,
+  new recruits or seedlings, small vegetative plants with 1
+  rosette, large vegetative plants with 2 or more rosettes,
+  and flowering plants.  Stage classes were assigned to
+  census plants using a combination of status and size data
+  recorded in the field.  See \code{demo(stage.classify)}
+  for more details.
 }
-\source{Data set owners: Brook Milligan, Chris Stubben, Allan Strand}
-%\references{}
-\seealso{ \code{\link{aq.census}} }
 \examples{
 data(aq.trans)
 head(aq.trans,3)
@@ -49,14 +42,15 @@ stage.vector.plot(sv[-1,], prop=FALSE, main="Aquilegia stage vectors")
 ## use xpd to draw legend outside plot boundaries
 op<-par(mar=c(5,4,4,1), xpd=TRUE)
 x<-barplot(prop.table(sv[-1,],2), las=1,
-xlab="Year", ylab="Proportion in stage class", 
+xlab="Year", ylab="Proportion in stage class",
 col=rainbow(4), ylim=c(0,1), xaxt='n', space=.5)
 yrs<-substr(colnames(sv),3,4)
 axis(1,x, yrs)
 legend(2.7,1.25, rev(rownames(sv)[-1]), fill=rev(rainbow(4)), bty='n', ncol=2)
 par(op)
-
-
+}
+\seealso{
+  \code{\link{aq.census}}
 }
 \keyword{datasets}
 

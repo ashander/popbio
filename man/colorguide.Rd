@@ -1,27 +1,28 @@
 \name{colorguide}
 \alias{colorguide}
-\title{ Plot a simple guide to colors }
-\description{
-  Plots a simple guide to colors with color blocks and names arranged vertically
-}
+\title{Plot a simple guide to colors}
 \usage{
-colorguide(col, main = "", border = FALSE)
+  colorguide(col, main = "", border = FALSE)
 }
 \arguments{
-  \item{col}{ A vector of colors }
-  \item{main}{ Title  }
-  \item{border}{ Type of border around rectangles }
+  \item{col}{A vector of colors}
+
+  \item{main}{Title}
+
+  \item{border}{Type of border around rectangles}
 }
-%\details{ }
-\value{ A plot of colors and names } 
-%\references{  }
-\author{ Chris Stubben }
-%\note{  }
+\value{
+  A plot of colors and names
+}
+\description{
+  Plots a simple guide to colors with color blocks and
+  names arranged vertically
+}
 \examples{
 op<-par(mfrow=c(2,2))
 colorguide(palette(), "Palette colors")
-## 657 built-in colors  
-## RED 
+## 657 built-in colors
+## RED
 reds<-grep("red", colors(), value=TRUE)
 ## sorted alphabetically
 colorguide(reds, "Reds sorted alphabetically")
@@ -44,7 +45,9 @@ blue2red<-colorRampPalette(c('blue','lightyellow','red'))
 colorguide(blue2red(16), "Blue to Red colors")
 
 par(op)
-
 }
-\keyword{ color }
+\author{
+  Chris Stubben
+}
+\keyword{color}
 

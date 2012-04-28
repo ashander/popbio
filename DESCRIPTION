@@ -5,5 +5,53 @@ Maintainer: Chris Stubben <stubben@lanl.gov>
 Date: 2012-02-05
 Title: Construction and analysis of matrix population models
 License: GPL
-Depends: quadprog
-Description: Construct and analyze projection matrix models from a demography study of marked individuals classified by age or stage. The package covers methods described in Matrix Population Models by Caswell (2001) and Quantitative Conservation Biology by Morris and Doak (2002).
+Depends:
+    quadprog
+Description: Construct and analyze projection matrix models from a demography
+    study of marked individuals classified by age or stage. The package covers
+    methods described in Matrix Population Models by Caswell (2001) and
+    Quantitative Conservation Biology by Morris and Doak (2002).
+Collate:
+    'aq.matrix.R'
+    'betaval.R'
+    'boot.transitions.R'
+    'colorguide.R'
+    'countCDFxt.R'
+    'damping.ratio.R'
+    'eigen.analysis.R'
+    'elasticity.R'
+    'extCDF.R'
+    'fundamental.matrix.R'
+    'generation.time.R'
+    'head2.R'
+    'hudmxdef.R'
+    'image2.R'
+    'Kendall.R'
+    'lambda.R'
+    'lnorms.R'
+    'logi.hist.plot.R'
+    'LTRE.R'
+    'matplot2.R'
+    'matrix2.R'
+    'mean.list.R'
+    'multiresultm.R'
+    'net.reproductive.rate.R'
+    'pfister.plot.R'
+    'pop.projection.R'
+    'popbio-package.R'
+    'projection.matrix.R'
+    'QPmat.R'
+    'reproductive.value.R'
+    'resample.R'
+    'sensitivity.R'
+    'splitA.R'
+    'stable.stage.R'
+    'stage.vector.plot.R'
+    'stoch.growth.rate.R'
+    'stoch.projection.R'
+    'stoch.quasi.ext.R'
+    'stretchbetaval.R'
+    'var2.R'
+    'varEst.R'
+    'vitalsens.R'
+    'vitalsim.R'

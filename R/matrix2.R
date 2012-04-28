@@ -1,3 +1,26 @@
+#'Square matrices
+#'
+#'Create a square matrix from a given set of values
+#'
+#'
+#'@param x a vector of matrix elements
+#'@param stages a vector of row names (also assigned to columns)
+#'@param byrow fill matrix by rows , default TRUE
+#'@return a square matrix
+#'@author Chris Stubben
+#'@seealso \code{\link{matrix}}
+#'@keywords methods
+#'@examples
+#'
+#'#Centaurea corymbosa from Freville 2004
+#'ceco<-c(0,0,5.905,0.368,0.639, 0.025, 0.001, 0.152, 0.051)
+#'stages <- c("seedling", "vegetative", "flowering")
+#'# shortcut for
+#'#matrix(ceco, nrow=3, byrow=TRUE,  dimnames=list(stages,stages))
+#'matrix2(ceco, stages)
+#'
+#'
+#'
 matrix2<-function(x, stages, byrow=TRUE)
 {
    if(!is.vector(x)){ x<-unlist(x)}

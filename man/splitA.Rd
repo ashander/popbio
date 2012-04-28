@@ -1,47 +1,38 @@
 \name{splitA}
-\Rdversion{1.1}
 \alias{splitA}
-\title{
-Split a projection matrix into separate T and F matrices
-}
-\description{
-Splits a projection matrix into transition and fertility matrices where
-\code{A = T + F}.
-}
+\title{Split a projection matrix into separate T and F matrices}
 \usage{
-splitA(A, r = 1, c = -1)
+  splitA(A, r = 1, c = -1)
 }
 \arguments{
-  \item{A}{ a projection matrix}
-  \item{r}{ rows containing fertilities (default is first row)  OR a
-       logical matrix  where TRUE is the location of a fertility value
-       OR a complete fertility matrix }
-  \item{c}{ columns containing fertilities, default is all columns
-      except first}
+  \item{A}{a projection matrix}
+
+  \item{r}{rows containing fertilities (default is first
+  row) OR a logical matrix where TRUE is the location of a
+  fertility value OR a complete fertility matrix}
+
+  \item{c}{columns containing fertilities, default is all
+  columns except first}
 }
-\details{ see section 5.1 in Caswell (2001) }
-
-\note{ By default, the fertility matrix will include elements in the first row (except first
-  element).   In some cases, it is not possible to split a projection matrix
-  using only row and column indexes.   Therefore,  a
-  logical matrix (where TRUE is the location of a fertility value) or
-  the complete fertility matrix  is also accepted (and T is just A-F)
+\value{
+  A list with T and F matrices
 }
-
-\value{ A list with T and F matrices}
-
-\seealso{ functions like  \code{\link{generation.time}} and
-  \code{\link{net.reproductive.rate}} use
-  \code{splitA} internally to split the matrix  }
-
-
-\references{ Caswell, H. 2001. Matrix population models: construction, analysis,
-and interpretation, Second edition. Sinauer, Sunderland,
-Massachusetts, USA.}
-
-\author{ Chris Stubben }
-
-%\seealso{ }
+\description{
+  Splits a projection matrix into transition and fertility
+  matrices where \code{A = T + F}.
+}
+\details{
+  see section 5.1 in Caswell (2001)
+}
+\note{
+  By default, the fertility matrix will include elements in
+  the first row (except first element).  In some cases, it
+  is not possible to split a projection matrix using only
+  row and column indexes.  Therefore, a logical matrix
+  (where TRUE is the location of a fertility value) or the
+  complete fertility matrix is also accepted (and T is just
+  A-F)
+}
 \examples{
 data(whale)
 splitA(whale)
@@ -57,9 +48,21 @@ splitA(A, row(A)<col(A))
 
 # survival curves
 x<-sapply(hudsonia, function(x) colSums(splitA(x, r=1:2)$T))
-matplot2(t(x), legend="bottomright", ylab="Survival", 
+matplot2(t(x), legend="bottomright", ylab="Survival",
 main="Hudsonia survival curves")
-
 }
+\author{
+  Chris Stubben
+}
+\references{
+  Caswell, H. 2001. Matrix population models: construction,
+  analysis, and interpretation, Second edition. Sinauer,
+  Sunderland, Massachusetts, USA.
+}
+\seealso{
+  functions like \code{\link{generation.time}} and
+  \code{\link{net.reproductive.rate}} use \code{splitA}
+  internally to split the matrix
+}
+\keyword{survey}
 
-\keyword{ survey}

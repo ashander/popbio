@@ -1,51 +1,46 @@
 \name{LTRE}
 \alias{LTRE}
-\title{ Life Table Response Experiment }
-\description{
-  Function to evaluate sensitivities in a fixed Life Table Response Experiment (LTRE).
-}
+\title{Life Table Response Experiment}
 \usage{
-LTRE(trts, ref)
+  LTRE(trts, ref)
 }
 \arguments{
-  \item{trts}{ A treatment matrix or a list of two or more treatment matrices }
-  \item{ref}{ A reference matrix }
-}
-\details{
- Sensitivities are evaluated midway between the treatment and
- reference matrices as described in section 10.1.1 in Caswell (2001).
+  \item{trts}{A treatment matrix or a list of two or more
+  treatment matrices}
+
+  \item{ref}{A reference matrix}
 }
 \value{
-  A matrix of contributions (equation 10.4 in Caswell) or a list of
-  matrices with one matrix of contributions per treatment
-
+  A matrix of contributions (equation 10.4 in Caswell) or a
+  list of matrices with one matrix of contributions per
+  treatment
 }
-\references{ 
-Caswell, H. 2001. Matrix population models: construction, analysis,
-and interpretation, Second edition. Sinauer, Sunderland,
-Massachusetts, USA.
-
-
- }
-\author{ Chris Stubben }
-\note{ The examples of a fixed LTRE are from 
-
-Horvitz, C. C., D. W. Schemske, and H. Caswell. 1997. The
-relative importance of life-history stages to population
-growth: prospective and retrospective analyses. Pages 247-271 in S. Tuljapurkar and H. Caswell, editors. Structured
-population models in marine, terrestrial and freshwater systems.
-Chapman and Hall, New York.
-
-A.L. Angert. 2006. Demography of central and marginal
-populations of monkeyflowers (Mimulus cardinalis and
-M. lewisii). Ecology 87:2014-2025.
-
-Check the \code{demo(Caswell)} for variance decomposition in a random
-design using killer whale.
-
-
+\description{
+  Function to evaluate sensitivities in a fixed Life Table
+  Response Experiment (LTRE).
 }
-% \seealso{   }
+\details{
+  Sensitivities are evaluated midway between the treatment
+  and reference matrices as described in section 10.1.1 in
+  Caswell (2001).
+}
+\note{
+  The examples of a fixed LTRE are from
+
+  Horvitz, C. C., D. W. Schemske, and H. Caswell. 1997. The
+  relative importance of life-history stages to population
+  growth: prospective and retrospective analyses. Pages
+  247-271 in S. Tuljapurkar and H. Caswell, editors.
+  Structured population models in marine, terrestrial and
+  freshwater systems. Chapman and Hall, New York.
+
+  A.L. Angert. 2006. Demography of central and marginal
+  populations of monkeyflowers (Mimulus cardinalis and M.
+  lewisii). Ecology 87:2014-2025.
+
+  Check the \code{demo(Caswell)} for variance decomposition
+  in a random design using killer whale.
+}
 \examples{
 #######  Calathea ovandensis
 data(calathea)
@@ -88,7 +83,7 @@ box()
 title(expression(italic("Calathea ovandensis")))
 
 
-#######  Mimulus 
+#######  Mimulus
 ## Pooled M. cardinalis reference matrix kindly provided by Amy Angert 1/2/2008.
 m_card_pool<-matrix( c(
 1.99e-01, 8.02e+02, 5.82e+03, 3.05e+04,
@@ -96,10 +91,10 @@ m_card_pool<-matrix( c(
 7.94e-06, 8.07e-02, 3.22e-01, 2.16e-01,
 2.91e-07, 1.58e-02, 1.15e-01, 6.01e-01), byrow=TRUE, nrow=4)
 
-## Population effects using pooled population matrices 
+## Population effects using pooled population matrices
 data(monkeyflower)
 card<-subset(monkeyflower,  species=="cardinalis" & year=="pooled")
-## split rows into list of 4 matrices 
+## split rows into list of 4 matrices
 Atrt<-lapply(split(as.matrix(card[,4:19]), 1:4),  matrix, nrow=4, byrow=TRUE)
 names(Atrt)<-card$site
 Cm<-LTRE(Atrt, m_card_pool)
@@ -126,8 +121,14 @@ text(bp[1,]-0.5, -.22, labels=colnames(x), srt=45, xpd=TRUE)
 title(expression(paste(italic("M. cardinalis"), " Range center")))
 box()
 par(op)
-
-
 }
-\keyword{ survey }
+\author{
+  Chris Stubben
+}
+\references{
+  Caswell, H. 2001. Matrix population models: construction,
+  analysis, and interpretation, Second edition. Sinauer,
+  Sunderland, Massachusetts, USA.
+}
+\keyword{survey}
 

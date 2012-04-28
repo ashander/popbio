@@ -1,3 +1,20 @@
+#'Calculate a variance matrix
+#'
+#'Calculates the variances from a list of matrices
+#'
+#'Returns a matrix containing variances from a list of matrices using a
+#'combination of \code{\link{unlist}} and \code{\link{apply}}.
+#'
+#'@param x A list of two or more matrices
+#'@return A matrix containing variances
+#'@author Chris Stubben
+#'@keywords survey
+#'@examples
+#'
+#'data(hudsonia)
+#'var2(hudsonia)
+#'
+#'
 var2 <- function(x)
 {
     if(!all(sapply(x, is.matrix)))

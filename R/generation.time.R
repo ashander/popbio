@@ -1,3 +1,33 @@
+#'Generation time
+#'
+#'Calculates the generation time of a stage-classified matrix
+#'
+#'see section 5.3.5 in Caswell (2001).
+#'
+#'@param A projection matrix
+#'@param \dots additional items are passed to \code{\link{splitA}} and are used
+#'to split A into T and F matrices
+#'@return Generation time. If the transition matrix is singular, then NA is
+#'returned.
+#'@note Previous versions required separate T and F matrices as input
+#'@author Chris Stubben
+#'@seealso see \code{\link{fundamental.matrix}} and
+#'\code{\link{net.reproductive.rate}} for other age-specific traits
+#'@references Caswell, H. 2001. Matrix population models: construction,
+#'analysis, and interpretation, Second edition. Sinauer, Sunderland,
+#'Massachusetts, USA.
+#'@keywords survey
+#'@examples
+#'
+#'data(whale)
+#'generation.time(whale)
+#'## fertilities in last column
+#'data(teasel)
+#'generation.time(teasel, r=1:6, c=6)
+#'## Plot 3 from Calathea 
+#'data(calathea)
+#'sapply(calathea[9:12], generation.time)
+#'
 generation.time<-function(A, ...)
 {
    if(!is.matrix(A)){stop("A projection matrix is required")}

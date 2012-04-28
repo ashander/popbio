@@ -1,3 +1,22 @@
+#'Return the first and last part of a matrix or dataframe
+#'
+#'Returns the first and last rows using output from both \code{\link{head}} and
+#'\code{\link{tail}} and separates the two parts with dots.  Useful for viewing
+#'ordered datasets such as longitudinal census data.
+#'
+#'
+#'@param x A matrix or dataframe
+#'@param head The number of first rows
+#'@param tail The number of last rows
+#'@param dotrows The number of rows of dots
+#'@return A smaller object like \code{x} with first and last rows only
+#'@author Chris Stubben
+#'@keywords manip
+#'@examples
+#'
+#'data(aq.trans)
+#'head2(aq.trans)
+#'
 head2<-function(x, head = 3, tail=1, dotrows=1)
 {
   if(!(is.matrix(x) || is.data.frame(x))){stop("A data frame or matrix is required")}

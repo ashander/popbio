@@ -1,29 +1,30 @@
+\docType{data}
 \name{nematode}
 \alias{nematode}
-\docType{data}
-\title{Population densities for the sugarbeet cyst nematode }
-\description{
-  A time-series of population vectors for the sugarbeet cyst
-  nematode \emph{Heterodera schachtii}. Individuals were classified
-  into three stages (J2, J3+J4, and adult) and densities (per 60 cc of soil) were averaged over four replicates, measured every two days, for 10 days. .
-}
-\usage{data(nematode)}
-\format{
-A matrix listing densities from  3 stage classes over 6 time periods
-}
-
+\title{Population densities for the sugarbeet cyst nematode}
+\format{A matrix listing densities from 3 stage classes over 6 time periods}
 \source{
- Used in Example 6.3 in Caswell (2001).
+  Used in Example 6.3 in Caswell (2001).
 }
-\references{
- Caswell, H. 2001. Matrix population models. Construction, Analysis
- and interpretation. 2nd ed. Sinauer, Sunderland, Massachusetts.
+\description{
+  A time-series of population vectors for the sugarbeet
+  cyst nematode \emph{Heterodera schachtii}. Individuals
+  were classified into three stages (J2, J3+J4, and adult)
+  and densities (per 60 cc of soil) were averaged over four
+  replicates, measured every two days, for 10 days. .
 }
-\seealso{\code{\link{QPmat}}}
-
 \examples{
 data(nematode)
-stage.vector.plot(nematode, prop=FALSE, log='y', ylim=c(.3,200), 
- xlab="Time", ylab="Nematode density")
+stage.vector.plot(nematode, prop=FALSE, log='y', ylim=c(.3,200),
+xlab="Time", ylab="Nematode density")
+}
+\references{
+  Caswell, H. 2001. Matrix population models. Construction,
+  Analysis and interpretation. 2nd ed. Sinauer, Sunderland,
+  Massachusetts.
+}
+\seealso{
+  \code{\link{QPmat}}
 }
 \keyword{datasets}
+

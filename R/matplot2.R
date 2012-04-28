@@ -1,3 +1,53 @@
+#'Plot a matrix
+#'
+#'Plot the rows of a matrix.  Useful for displaying a matrix of stage vectors,
+#'survival rates, sensitivities and so on.
+#'
+#'Only a few basic legend options are available.  For more control, set
+#'legend=NA and run separately.
+#'
+#'@param x a matrix
+#'@param proportions If TRUE, then plot proportional changes
+#'@param legend a \code{\link{legend}} keyword or vector of x,y coordinates,
+#'defaults to top-right corner
+#'@param xlab a label for the x axis
+#'@param ylab a label for the y axis
+#'@param type plot type, default line
+#'@param las style of axis labels, default horizontal
+#'@param pch point types
+#'@param lwd line width
+#'@param lty line type
+#'@param col color
+#'@param lcex legend size expansion
+#'@param lbty legend box type
+#'@param lcol number of columns in legend
+#'@param ltitle legend title
+#'@param lsort sort legend by decreasing order of mean number in row
+#'@param \dots additional options are passed to \code{\link{plot}} function
+#'@return A matrix plot
+#'@author Chris Stubben
+#'@seealso \code{\link{matplot}} and \code{\link{stage.vector.plot}}
+#'@keywords hplot
+#'@examples
+#'
+#'
+#'data(calathea)
+#'# survival rates
+#'x<-calathea[9:12]
+#'x<-sapply(x, function(x) colSums(splitA(x, r=1:2)$T))
+#'matplot2(t(x), legend="bottomright", ylab="Survival", 
+#'main="Calathea survival curves")
+#'
+#'# Growth rates - do not sort legend
+#'x<-sapply(calathea[-17], lambda)
+#'x<-matrix(x, nrow=4, byrow=TRUE, dimnames= list(paste("plot", 1:4), 1982:1985))
+#'matplot2(x, type='b', lsort=FALSE, ylab="Growth rate", main="Calathea growth rates")
+#'
+#'# Convergence to stable stage (excluding seeds)
+#'x<-pop.projection(calathea[[7]], rep(1,8), 10)
+#'matplot2(x$stage.vectors[-1,], prop=TRUE,
+#' main="Calathea stage vectors", lcex=.7)
+#'
 matplot2<-function(x, proportions=FALSE, legend="topright",  xlab=NULL, ylab=NULL, type='l', 
                    las=1, pch=c(15:18, 1:3), lwd=1, lty=1:nrow(x), col=rainbow(nrow(x)),
                    lcex=1, lbty='o', lcol=1, ltitle=NULL, lsort=TRUE, ... )

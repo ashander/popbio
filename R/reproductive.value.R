@@ -1,3 +1,27 @@
+#'Stable stage distribution
+#'
+#'Calculates the reproductive values of a projection matrix
+#'
+#'see section 4.5 in Caswell (2001).
+#'
+#'@param A A projection matrix
+#'@return A vector containing the reproductive values scaled so v[1]=1
+#'@author Chris Stubben
+#'@references Caswell, H. 2001. Matrix population models: construction,
+#'analysis, and interpretation, Second edition. Sinauer, Sunderland,
+#'Massachusetts, USA.
+#'
+
+#'@keywords survey
+#'@examples
+#'
+#'
+#'data(teasel)
+#'v<-reproductive.value(teasel)
+#'v
+#'dotchart(log10(v), pch=16, xlab="Reproductive value (log10)")
+#'
+#'
 reproductive.value<-function(A)
 {
    ev <- eigen(A)

@@ -1,35 +1,41 @@
 \name{stage.vector.plot}
 \alias{stage.vector.plot}
-
-\title{ Plot stage vector projections }
-\description{
- Plots short-term dynamics and convergence to stage stage distribution using stage vector projections.  
-}
+\title{Plot stage vector projections}
 \usage{
-stage.vector.plot(stage.vectors, proportions=TRUE, legend.coords="topright", 
-        ylim=NULL, xlab="Years", ylab=NULL, col=rainbow(8),  ... )
+  stage.vector.plot(stage.vectors, proportions = TRUE,
+    legend.coords = "topright", ylim = NULL,
+    xlab = "Years", ylab = NULL, col = rainbow(8), ...)
 }
- 
 \arguments{
-  \item{stage.vectors}{ a matrix listing stage class vectors in columns}
-  \item{proportions}{ plot proportional changes or total numbers, defaults to proportions. }
-  \item{legend.coords}{ a \code{\link{legend}} keyword or vector of x,y coordinates, defaults to top-right corner }
-  \item{ylim}{the y limits of the plot, defaults to min and max values in stage.vectors}
+  \item{stage.vectors}{a matrix listing stage class vectors
+  in columns}
+
+  \item{proportions}{plot proportional changes or total
+  numbers, defaults to proportions.}
+
+  \item{legend.coords}{a \code{\link{legend}} keyword or
+  vector of x,y coordinates, defaults to top-right corner}
+
+  \item{ylim}{the y limits of the plot, defaults to min and
+  max values in stage.vectors}
+
   \item{xlab}{a label for the x axis}
+
   \item{ylab}{a label for the y axis}
+
   \item{col}{vector of line colors, defaults to rainbow(8)}
- 
-  \item{...}{additional options are passed to \code{\link{plot}} function}
 
-
+  \item{...}{additional options are passed to
+  \code{\link{plot}} function}
 }
-\details{   A plot of stage or age class projections }
-\references{see section 2.2 in Caswell 2001 }
-\author{ Chris Stubben }
-
-\seealso{ see \code{\link{pop.projection}} }
+\description{
+  Plots short-term dynamics and convergence to stage stage
+  distribution using stage vector projections.
+}
+\details{
+  A plot of stage or age class projections
+}
 \examples{
-
 ## matrix from Example 2.1 in Caswell
 A<-matrix(c(
 0, 0.3,   0,
@@ -51,7 +57,16 @@ axis(2, at = 10^pwrs, labels=parse(text=paste("10^", pwrs, sep = "")),
 las=1, tcl= -.6)
 # minor ticks
 axis(2, at = 1:9 * rep(10^pwrs[-1] / 10, each = 9),
-    tcl = -0.3, labels = FALSE)
-
+   tcl = -0.3, labels = FALSE)
 }
-\keyword{ survey }
+\author{
+  Chris Stubben
+}
+\references{
+  see section 2.2 in Caswell 2001
+}
+\seealso{
+  see \code{\link{pop.projection}}
+}
+\keyword{survey}
+

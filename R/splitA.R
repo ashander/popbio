@@ -1,3 +1,49 @@
+#'Split a projection matrix into separate T and F matrices
+#'
+#'Splits a projection matrix into transition and fertility matrices where
+#'\code{A = T + F}.
+#'
+#'see section 5.1 in Caswell (2001)
+#'
+#'@param A a projection matrix
+#'@param r rows containing fertilities (default is first row) OR a logical
+#'matrix where TRUE is the location of a fertility value OR a complete
+#'fertility matrix
+#'@param c columns containing fertilities, default is all columns except first
+#'@return A list with T and F matrices
+#'@note By default, the fertility matrix will include elements in the first row
+#'(except first element).  In some cases, it is not possible to split a
+#'projection matrix using only row and column indexes.  Therefore, a logical
+#'matrix (where TRUE is the location of a fertility value) or the complete
+#'fertility matrix is also accepted (and T is just A-F)
+#'@author Chris Stubben
+#'@seealso functions like \code{\link{generation.time}} and
+#'\code{\link{net.reproductive.rate}} use \code{splitA} internally to split the
+#'matrix
+#'@references Caswell, H. 2001. Matrix population models: construction,
+#'analysis, and interpretation, Second edition. Sinauer, Sunderland,
+#'Massachusetts, USA.
+#'@keywords survey
+#'@examples
+#'
+#'data(whale)
+#'splitA(whale)
+#'# teasel -fertilitiles in last column
+#'data(teasel)
+#'splitA(teasel, r=1:6, c=6)
+#'# hudsonia - fertilities in first two columns
+#'data(hudsonia)
+#'A<-hudsonia[[1]]
+#'splitA(A, r=1:2)
+#'## example using a logical matrix (if fertilities were in the upper diagonal)
+#'splitA(A, row(A)<col(A))
+#'
+#'# survival curves
+#'x<-sapply(hudsonia, function(x) colSums(splitA(x, r=1:2)$T))
+#'matplot2(t(x), legend="bottomright", ylab="Survival", 
+#'main="Hudsonia survival curves")
+#'
+#'
 splitA<-function(A, r=1, c=-1)
 {
    tm<-A

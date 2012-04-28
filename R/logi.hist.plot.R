@@ -1,3 +1,52 @@
+#'Plot logistic regression
+#'
+#'Plot combined graphs for logistic regressions
+#'
+#'
+#'@param independ explanatory variable
+#'@param depend dependent variable, typically a logical vector
+#'@param logi.mod type of fitting, 1 = logistic; 2 = "gaussian" logistic
+#'@param type type of representation, "dit" = dit plot; "hist" = histogram
+#'@param boxp TRUE = with box plots, FALSE = without
+#'@param rug TRUE = with rug plots, FALSE = without
+#'@param ylabel y-axis label
+#'@param ylabel2 2nd y-axis label
+#'@param xlabel x-axix label
+#'@param mainlabel overall title for plot
+#'@param las.h orientation of axes labels (0 = vertical, 1 = horizontal
+#'@param counts add counts above histogram bars
+#'@param \dots additional options passed to logi.hist
+#'@return A logistic regression plot
+#'@note Added options for axis labels
+#'@author M. de la Cruz Rot
+#'@references de la Cruz Rot, M. 2005. Improving the Presentation of Results of
+#'Logistic Regression with R.  ESA Bulletin 86:41-48.
+#'
+#'\url{http://esapubs.org/bulletin/backissues/086-1/bulletinjan2005.htm}
+#'
+
+#'@keywords survey
+#'@examples
+#'
+#'
+#'data(aq.trans)
+#'
+#'aq.trans$survived<-aq.trans$fate!="dead"
+#'
+#'a<-subset(aq.trans, leaf<50 & stage!="recruit", c(leaf,survived))
+#'
+#'logi.hist.plot(a$leaf,  a$survived, 
+#'type="hist", boxp=FALSE, counts=TRUE, int=10, 
+#'ylabel="Survival probability", ylabel2="Number of plants", 
+#' xlab="Number of leaves" )
+#'
+#'
+#'
+#'b<-glm(survived ~ leaf, binomial, data=a)
+#' summary(b)
+#'
+#'
+#'
 logi.hist.plot <- function (independ, depend, logi.mod = 1,
 type = "dit", boxp = TRUE, rug = FALSE,
   ylabel= "Probability", ylabel2="Frequency", xlabel="", mainlabel="",
