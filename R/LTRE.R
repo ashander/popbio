@@ -113,7 +113,7 @@
 #'par(op)
 #'
 #'
-#'
+#'@export
 LTRE <-
 function(trts, ref)
 {

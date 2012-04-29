@@ -46,7 +46,7 @@
 #'aq.matrix(x, recruits=rec, seed.survival=.7, seed.bank=3000)
 #'
 #'
-#'
+#'@export
 aq.matrix<-function(trans, recruits, summary=TRUE, seed.survival=0.126, seed.bank.size=10000, seeds.per.fruit=120, ...)
 {
    x<-trans

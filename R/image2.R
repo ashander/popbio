@@ -66,7 +66,7 @@
 #'}
 #'par(op)
 #'
-#'
+#'@export
 image2<-function(x, col=c('white', rev(heat.colors(23))),  breaks, log=TRUE,
                  border=NA, box.offset=0.1, round=3, cex, text.cex=1, text.col="black",
                  mar=c(1,3,3,1),  labels=2:3, label.offset=0.1, label.cex=1, srt=90 )

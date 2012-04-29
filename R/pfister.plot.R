@@ -52,7 +52,7 @@
 #'a<-cor.test(vr1$cv, vr1$elas, method="spearman")
 #'a
 #'text(10, .0015, substitute(rho == x, list(x=round(a$estimate,2))), col="blue")
-#'
+#'@export
 pfister.plot<-function(A)
 {
     n<-length(A)

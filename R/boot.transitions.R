@@ -89,7 +89,7 @@
 #'abline(v=ci, lty=3)
 #'
 #'
-#'
+#'@export
 boot.transitions <- function(transitions, iterations, by.stage.counts=FALSE, ...)
 {
    ## check orderd fate, stage, and one or more fertility columns?

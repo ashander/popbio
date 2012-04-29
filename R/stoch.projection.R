@@ -56,7 +56,7 @@
 #'
 #'
 #'
-#'
+#'@export
 stoch.projection<-function(matrices, n0, tmax=50, nreps=5000, prob=NULL, nmax=NULL, sumweight=rep(1,length(n0)), verbose=FALSE)
 {
    if(!is.list(matrices)){ stop("Please use a list of matrices as input") }   

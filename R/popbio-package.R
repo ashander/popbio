@@ -759,10 +759,6 @@ NULL
 #'
 NULL
 
-
-
-
-
 #'Projection matrices for desert tortoise
 #'
 #'Projection matrices for the desert tortoise \emph{Gopherus agassizii}
@@ -794,19 +790,9 @@ NULL
 #'lambda(A)
 #'sapply(tortoise, lambda)
 #'
-#'
-#'
-#'
 NULL
 
-
-
-
-
 #'Projection matrix for killer whale
-#'
-#'Projection matrix for killer whales
-#'
 #'
 #'@name whale
 #'@docType data
@@ -827,13 +813,7 @@ NULL
 #'matplot2(sensitivity(whale), type='b', legend='topleft', ltitle='Fate',
 #'main='Killer Whale sensitivity')
 #'
-#'
-#'
 NULL
-
-
-
-
 
 #'Survirvorship data for adult and juvenile Acorn Woodpeckers
 #'
@@ -869,8 +849,11 @@ NULL
 #'list(stage=woodpecker$rate), sum)
 #'x$survival<-x[,3]/x[,2]
 #'x
-#'
 NULL
+
+
+
+
 
 
 

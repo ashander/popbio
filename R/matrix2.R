@@ -20,7 +20,7 @@
 #'matrix2(ceco, stages)
 #'
 #'
-#'
+#'@export
 matrix2<-function(x, stages, byrow=TRUE)
 {
    if(!is.vector(x)){ x<-unlist(x)}

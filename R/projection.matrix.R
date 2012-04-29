@@ -99,7 +99,7 @@
 #'A<-projection.matrix(sf, add=c(1,1, seed.survival, 2,1, recruitment.rate ))
 #'A
 #'max(Re(eigen(A)$values))
-#'
+#'@export
 projection.matrix <-function(transitions, stage=NULL, fate=NULL, fertility=NULL, sort=NULL,  add=NULL, TF=FALSE )
 {
    if(missing(stage)){ stage <-"stage"}

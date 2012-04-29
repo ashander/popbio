@@ -46,7 +46,7 @@
 #'axis(2, at = 1:9 * rep(10^pwrs[-1] / 10, each = 9),
 #'    tcl = -0.3, labels = FALSE)
 #'
-#'
+#'@export
 stage.vector.plot<-function(stage.vectors, proportions=TRUE, legend.coords="topright", ylim=NULL, xlab="Years", ylab=NULL, col=rainbow(8), ... )
 {
     p<-stage.vectors

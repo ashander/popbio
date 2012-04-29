@@ -19,7 +19,7 @@
 #'## or
 #'x <- matrix(unlist(hudsonia), ncol=length(hudsonia) )
 #'matrix(rowMeans(x), 6, 6)
-#'
+#'@export
 mean.list <- function(x, ...)
 {
     if(!all(sapply(x, is.matrix)))

@@ -87,7 +87,7 @@
 #'legend(1,1, rownames(t(x[,2:3])), fill=grey.colors(2))
 #'abline(h=0)
 #'
-#'
+#'@export
 vitalsens <- function(elements, vitalrates)
 {
    ## check if elements is matrix expression?

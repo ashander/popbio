@@ -47,7 +47,7 @@
 #'x<-pop.projection(calathea[[7]], rep(1,8), 10)
 #'matplot2(x$stage.vectors[-1,], prop=TRUE,
 #' main="Calathea stage vectors", lcex=.7)
-#'
+#'@export
 matplot2<-function(x, proportions=FALSE, legend="topright",  xlab=NULL, ylab=NULL, type='l', 
                    las=1, pch=c(15:18, 1:3), lwd=1, lty=1:nrow(x), col=rainbow(nrow(x)),
                    lcex=1, lbty='o', lcol=1, ltitle=NULL, lsort=TRUE, ... )

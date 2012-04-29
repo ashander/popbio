@@ -61,7 +61,7 @@
 #'
 #'
 #'
-#'
+#'@export
 resample<-function(A, n, fvar=1.5, ...)
 {
    # if(nrow(A) != length(n)){ rep(n, length=nrow(A)) } 

@@ -49,7 +49,7 @@
 #'} 
 #'matplot(totalpop, type = 'l', log="y",
 #'        xlab = 'Time (years)', ylab = 'Total population')
-#'
+#'@export
 multiresultm <- function(n,T,F,varF=NULL)
 {
   # First, determine numbers from survival and growth

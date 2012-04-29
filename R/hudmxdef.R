@@ -20,7 +20,7 @@
 #'
 #'data(hudvrs)
 #'hudmxdef(hudvrs$mean)
-#'
+#'@export
 hudmxdef<- function(vrs)
 {
 matrix(c(

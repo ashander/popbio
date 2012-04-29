@@ -74,7 +74,7 @@
 #'
 #'
 #'
-#'
+#'@export
 eigen.analysis<-function(A, zero=TRUE)
 {
     ev <- eigen(A)

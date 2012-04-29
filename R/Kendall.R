@@ -50,7 +50,7 @@
 #'data(woodpecker) 
 #'wp.est <- Kendall(woodpecker, grades=200)
 #'wp.est
-#'
+#'@export
 Kendall<-function(rates, grades=1000, maxvar=0.2,minvar=0.00001, maxmean=1, minmean=0.01)
 {
    ## number of different years or time intervals and rate ids in dataset

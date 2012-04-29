@@ -7,7 +7,7 @@
   Projection matrix from Example 5.1 in Caswell (2001)
 }
 \description{
-  Projection matrix for killer whales
+  Projection matrix for killer whale
 }
 \examples{
 data(whale)

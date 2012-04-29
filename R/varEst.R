@@ -24,7 +24,7 @@
 #'
 #'data(woodpecker) 
 #'varEst(woodpecker)
-#'
+#'@export
 varEst <- function (rates,weighted=1)
 {
   times<-length(unique(rates[,2]))

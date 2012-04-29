@@ -32,7 +32,7 @@
 #'## calculate b (transpose is not necessary - either way works)
 #'b<-apply(C, 1, max)
 #'QPmat(nematode, C,b,nonzero)
-#'
+#'@export
 QPmat <- function(nout, C, b, nonzero)
 {
  ## Load "quadprog" package if NOT  in package list

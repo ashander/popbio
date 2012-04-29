@@ -16,7 +16,7 @@
 #'
 #'data(aq.trans)
 #'head2(aq.trans)
-#'
+#'@export
 head2<-function(x, head = 3, tail=1, dotrows=1)
 {
   if(!(is.matrix(x) || is.data.frame(x))){stop("A data frame or matrix is required")}

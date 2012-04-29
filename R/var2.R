@@ -14,7 +14,7 @@
 #'data(hudsonia)
 #'var2(hudsonia)
 #'
-#'
+#'@export
 var2 <- function(x)
 {
     if(!all(sapply(x, is.matrix)))

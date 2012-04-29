@@ -92,7 +92,7 @@
 #' xlab="Years into the future", ylab="Cumulative probability of quasi-extinction")
 #'legend(2,1, c("Full model", "No between-year correlations", "No correlations"),
 #' lty=1:3, col=2:4, lwd=2)
-#'
+#'@export
 vitalsim <-function(vrmeans, vrvars, corrin, corrout, makemx, n0, yrspan, Ne=500, tmax=50, runs=500, vrtypes=NULL, vrmins=NULL, vrmaxs=NULL,sumweight=NULL)
 {
 x1<-length(vrmeans)  

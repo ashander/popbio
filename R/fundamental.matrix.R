@@ -29,7 +29,7 @@
 #'data(whale)
 #'fundamental.matrix(whale)
 #'
-#'
+#'@export
 fundamental.matrix<-function(A, ...)
 {
    if(!is.matrix(A)){stop("A projection matrix is required")}

@@ -38,7 +38,7 @@
 #' type='l', lty=1, col=rainbow(10), las=1,
 #' main="Time to reach a quasi-extinction threshold 
 #'of 10 above-ground individuals")
-#'
+#'@export
 stoch.quasi.ext<-function(matrices, n0, Nx, tmax=50, maxruns=10, nreps=5000, prob=NULL, sumweight=NULL, verbose=TRUE)
 {
    if(is.list(matrices)){matrices<-matrix(unlist(matrices), ncol=length(matrices))}

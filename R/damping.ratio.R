@@ -32,7 +32,7 @@
 #'x
 #'matplot2(x, type='b', ylab="Damping ratio", main="Calathea")
 #'
-#'
+#'@export
 damping.ratio<-function(A)
 {
    ev <- eigen(A)

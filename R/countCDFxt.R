@@ -36,7 +36,7 @@
 #'data(grizzly)
 #'logN<-log(grizzly$N[-1]/grizzly$N[-39])
 #'countCDFxt(mu=mean(logN), sig2=var(logN), nt=38, tq=38, Nc=99, Ne=20)
-#'
+#'@export
 countCDFxt <- function(mu, sig2, nt, Nc, Ne, tq=nt, tmax=50, Nboot=500, plot=TRUE)
 {
    SEmu <- sqrt(sig2/tq)       # calculate standard error of mu

@@ -30,7 +30,7 @@
 #'
 #'exp(sgr$approx)
 #'
-#'
+#'@export
 stoch.growth.rate<-function(matrices, prob=NULL, maxt=50000, verbose=TRUE)
 {
    if(is.list(matrices)){matrices<-matrix(unlist(matrices), ncol=length(matrices))}

@@ -46,7 +46,7 @@
 #' summary(b)
 #'
 #'
-#'
+#'@export
 logi.hist.plot <- function (independ, depend, logi.mod = 1,
 type = "dit", boxp = TRUE, rug = FALSE,
   ylabel= "Probability", ylabel2="Frequency", xlabel="", mainlabel="",

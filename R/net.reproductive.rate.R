@@ -29,7 +29,7 @@
 #'data(calathea)
 #'sapply(calathea[9:12], net.reproductive.rate)
 #'
-#'
+#'@export
 net.reproductive.rate<-function(A, ...)
 {
    if(!is.matrix(A)){stop("A projection matrix is required")}

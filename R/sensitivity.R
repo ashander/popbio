@@ -34,7 +34,7 @@
 #'
 #'
 #'
-#'
+#'@export
 sensitivity<-function(A, zero=FALSE)
 {
    ev <- eigen(A)

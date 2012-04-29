@@ -27,7 +27,7 @@
 #'## Plot 3 from Calathea 
 #'data(calathea)
 #'sapply(calathea[9:12], generation.time)
-#'
+#'@export
 generation.time<-function(A, ...)
 {
    if(!is.matrix(A)){stop("A projection matrix is required")}

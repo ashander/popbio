@@ -44,7 +44,7 @@
 #'plot(n, exts, type='l', las=1,
 #'xlab="Current population size",
 #'ylab="Probability of quasi-extinction by year 50")
-#'
+#'@export
 extCDF <- function(mu,sig2,Nc, Ne,tmax=50)
 {
    ## some functions from box 3.3 (erf is matlab error function)

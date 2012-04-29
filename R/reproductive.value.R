@@ -21,7 +21,7 @@
 #'v
 #'dotchart(log10(v), pch=16, xlab="Reproductive value (log10)")
 #'
-#'
+#'@export
 reproductive.value<-function(A)
 {
    ev <- eigen(A)

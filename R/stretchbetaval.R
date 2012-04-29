@@ -40,7 +40,7 @@
 #'}
 #' hist(rndfert,20, main="Stretched beta-distributed random fertilities", 
 #'xlab="Fertility rate", , col="blue") 
-#'
+#'@export
 stretchbetaval <- function(mn,std,minb,maxb,fx)
 {
    if (std == 0) {bb <- mn} # with no variation, then the value = mean

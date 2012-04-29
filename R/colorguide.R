@@ -39,7 +39,7 @@
 #'
 #'par(op)
 #'
-#'
+#'@export
 colorguide <- function(col, main="", border=FALSE)
 {
   col<-rev(col)   ## reverse order of colors to print top to bottom

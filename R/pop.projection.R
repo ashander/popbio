@@ -51,7 +51,7 @@
 #'## convergence is slow with damping ratio close to 1
 #'damping.ratio(A)
 #'pop.projection(A,n, 100)$pop.changes
-#'
+#'@export
 pop.projection <- function(A,n,iterations=20)
 {
    x<-length(n)

@@ -32,7 +32,7 @@
 #'xlab="Fertility rate", col="blue")
 #'
 #'
-#' 
+#'@export 
 lnorms <- function(n, mean=2,var=1)
 {
     nmeans  <- log(mean) - 0.5 * log(var/mean^2 + 1)

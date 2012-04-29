@@ -23,7 +23,7 @@
 #'       ylab="Stable stage proportion", xlab="Stage class", main="Teasel")
 #'box()
 #'
-#'
+#'@export
 stable.stage<-function(A)
 {
    ev <- eigen(A)

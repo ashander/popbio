@@ -55,7 +55,7 @@
 #'}
 #'legend(0.5,0.4, c("(0.50, 0.05)", "(0.50, 0.25)", "(0.50, 0.45)"),
 #'lty=1:3, lwd=2, col=2:4, title="mean and sd")
-#'
+#'@export
 betaval <-function(mn,sdev,fx=runif(1))
 {
    if(mn>1 || mn<0){stop("Please select a mean beta between 0 and 1")} 

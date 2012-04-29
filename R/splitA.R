@@ -43,7 +43,7 @@
 #'matplot2(t(x), legend="bottomright", ylab="Survival", 
 #'main="Hudsonia survival curves")
 #'
-#'
+#'@export
 splitA<-function(A, r=1, c=-1)
 {
    tm<-A

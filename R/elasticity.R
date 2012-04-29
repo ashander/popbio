@@ -33,7 +33,7 @@
 #'# fertility in top row, stasis on diagonal, and growth on subdiagonal
 #'c(F=sum(elas[1,]), P=sum(diag(elas)), G=sum(elas[row(elas)==col(elas)+1]))
 #'
-#'
+#'@export
 elasticity<-function(A)
 {
    s<-sensitivity(A)

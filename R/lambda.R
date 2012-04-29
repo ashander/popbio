@@ -30,7 +30,7 @@
 #'
 #'
 #'
-#'
+#'@export
 lambda<-function(A)
 {
     ev <- eigen(A)
