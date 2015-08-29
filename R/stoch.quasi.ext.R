@@ -46,8 +46,7 @@ stoch.quasi.ext<-function(matrices, n0, Nx, tmax=50, maxruns=10, nreps=5000, pro
    if(is.null(sumweight)){sumweight=rep(1,x)}
    y<-dim(matrices)[2]
    ext<-matrix(numeric(maxruns*tmax), ncol=maxruns)   
-   for(h in 1:maxruns)
-   {
+    ext <- sapply(1:maxruns, function(h){
       if(verbose)
       {
          print(paste("Calculating extinction probability for run", h), quote=FALSE)
@@ -70,8 +69,8 @@ stoch.quasi.ext<-function(matrices, n0, Nx, tmax=50, maxruns=10, nreps=5000, pro
          }      
       }
      prob.ext<-cumsum(prob.ext/nreps)
-     ext[,h]<-prob.ext   
-   }
+     prob.ext
+   })
 ext
 }
 
